@@ -1,5 +1,13 @@
 import random
 import csv
+import os
+
+# import .env variables
+from dotenv import load_dotenv
+load_dotenv()
+
+AMOUNT = int(os.getenv("AMOUNT"))
+NAME_FILE = os.getenv("NAME_FILE")
 
 def generar_rut():
     # Genera un número aleatorio de 7 dígitos
@@ -24,12 +32,12 @@ def generar_rut():
     return f"{numero}-{dv}"
 
 # Crea el archivo CSV y escribe los RUTs generados en él
-with open('DNI.csv', mode='w', newline='') as archivo:
+with open(NAME_FILE, mode='w', newline='') as archivo:
     escritor_csv = csv.writer(archivo)
     ruts_generados = set()  # Para mantener un conjunto de RUTs generados
 
     # Escribe los RUTs generados en el archivo CSV
-    for i in range(1000):
+    for i in range(AMOUNT):
         rut = generar_rut()
         escritor_csv.writerow([rut])
         ruts_generados.add(rut)
