@@ -8,6 +8,7 @@ Antes de ejecutar el script, asegúrese de tener los siguientes requisitos insta
 
 - Python 3.x: El script fue desarrollado y probado en Python 3.6, pero se espera que funcione en versiones posteriores.
 - Librería `random`: Esta librería es utilizada para generar números aleatorios en el script y generalmente está incluida en la instalación predeterminada de Python.
+- python-dotenv: El dotenv se utiliza para leer el par de clave y valor del archivo .env y agregarlo a la variable de entorno.
 
 ## Uso
 
